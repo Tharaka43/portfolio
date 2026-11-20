@@ -114,7 +114,7 @@ export default function Experience() {
                 </h5>
                 <p className="text-xs text-gray-400 font-mono">Pathmadewa Solution</p>
                 <p className="text-gray-400 text-xs sm:text-sm mt-2.5 leading-relaxed font-light">
-                  Directing software architectural design, lifecycle, and end-to-end development of proprietary solutions including Nexo POS and Resto Systems.
+                  Directing software architectural design, lifecycle, and end-to-end development of proprietary solutions including Nexo POS, NexoPlay Game Cafe, and Resto Systems.
                 </p>
               </div>
 

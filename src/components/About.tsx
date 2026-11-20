@@ -37,7 +37,7 @@ export default function About() {
           </h2>
           
           <p className="text-gray-300 leading-relaxed mt-6 sm:mt-8 text-sm md:text-base max-w-2xl font-light">
-            I am <strong className="text-white font-semibold">A H T K Pathmadewa</strong>, a Full Stack Software Engineer and Tech Entrepreneur specialized in building robust, scalable, and industry-specific software solutions. With a strong foundation in modern frameworks and architecture, I focus on delivering end-to-end digital products—from offline-first desktop applications to real-time cloud dashboards.
+            I am <strong className="text-white font-semibold">A H T K Pathmadewa</strong>, a Full Stack Software Engineer and Product Creator specialized in building robust, scalable, and industry-specific software solutions. With a strong foundation in modern frameworks and architecture, I focus on delivering end-to-end digital products—from offline-first desktop applications to real-time cloud dashboards and AI-assisted educational platforms.
           </p>
 
           <p className="text-gray-400 leading-relaxed mt-4 text-sm md:text-base max-w-2xl font-light">

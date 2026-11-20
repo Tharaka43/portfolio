@@ -1,0 +1,92 @@
+{
+  "viewportsTested": [
+    {
+      "viewport": "desktop-1920",
+      "width": 1920,
+      "overflow": "0px",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "overflow": "0px",
+      "status": "PASS"
+    },
+    {
+      "viewport": "tablet-1024",
+      "width": 1024,
+      "overflow": "0px",
+      "status": "PASS"
+    },
+    {
+      "viewport": "tablet-768",
+      "width": 768,
+      "overflow": "0px",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile-430",
+      "width": 430,
+      "overflow": "0px",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile-390",
+      "width": 390,
+      "overflow": "0px",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile-375",
+      "width": 375,
+      "overflow": "0px",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile-360",
+      "width": 360,
+      "overflow": "0px",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile-320",
+      "width": 320,
+      "overflow": "0px",
+      "status": "PASS"
+    }
+  ],
+  "overflowDetected": [],
+  "consoleErrors": [],
+  "productPagesTested": [
+    {
+      "slug": "nexo-pos",
+      "status": 200,
+      "title": "NEXO POS — Architecture & Case Study | A H T K PATHMADEWA | A H T K PATHMADEWA"
+    },
+    {
+      "slug": "resto-management",
+      "status": 200,
+      "title": "Resto Restaurant Management — Architecture & Case Study | A H T K PATHMADEWA | A H T K PATHMADEWA"
+    },
+    {
+      "slug": "nexoplay-game-cafe",
+      "status": 200,
+      "title": "NexoPlay Game Cafe Management — Architecture & Case Study | A H T K PATHMADEWA | A H T K PATHMADEWA"
+    },
+    {
+      "slug": "koreanguru",
+      "status": 200,
+      "title": "KoreanGuru — Architecture & Case Study | A H T K PATHMADEWA | A H T K PATHMADEWA"
+    },
+    {
+      "slug": "nihongoguru",
+      "status": 200,
+      "title": "NihongoGuru — Architecture & Case Study | A H T K PATHMADEWA | A H T K PATHMADEWA"
+    },
+    {
+      "slug": "englishguru",
+      "status": 200,
+      "title": "EnglishGuru — Architecture & Case Study | A H T K PATHMADEWA | A H T K PATHMADEWA"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight, Mail, MessageSquare } from "lucide-react";
 
@@ -16,10 +17,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about", num: "01" },
-    { name: "Projects", href: "#projects", num: "02" },
-    { name: "Experience", href: "#experience", num: "03" },
-    { name: "Contact", href: "#contact", num: "04" },
+    { name: "About", href: "/#about", num: "01" },
+    { name: "Products", href: "/#products", num: "02" },
+    { name: "Experience", href: "/#experience", num: "03" },
+    { name: "Contact", href: "/#contact", num: "04" },
   ];
 
   return (
@@ -27,13 +28,13 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-5 md:px-12 py-4 md:py-6 ${
           scrolled || isOpen
-            ? "bg-[#050505]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl"
+            ? "bg-[#050505]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl"
             : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group cursor-pointer">
+          <Link href="/" className="flex items-center gap-3 group cursor-pointer" aria-label="Go to Homepage">
             <svg
               width="32"
               height="32"
@@ -64,43 +65,43 @@ export default function Navbar() {
             <span className="text-white font-bold tracking-[0.15em] uppercase text-sm sm:text-base md:text-lg mt-0.5">
               A H T K Pathmadewa<span className="text-[#bf953f]">.</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex gap-8 text-xs font-semibold tracking-widest text-gray-400 uppercase">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="hover:text-white transition-colors relative py-1 group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#bf953f] to-[#fcf6ba] transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Desktop Call to Action */}
           <div className="hidden md:block">
-            <a
-              href="#contact"
-              className="px-6 py-2.5 border border-[#bf953f]/40 bg-gradient-to-r from-[#bf953f]/10 to-transparent rounded-full text-white text-xs font-semibold tracking-widest uppercase hover:border-[#bf953f] hover:bg-[#bf953f] hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(191,149,63,0.15)]"
+            <Link
+              href="/#contact"
+              className="px-6 py-2.5 border border-[#bf953f]/40 bg-gradient-to-r from-[#bf953f]/10 to-transparent rounded-full text-white text-xs font-semibold tracking-widest uppercase hover:border-[#bf953f] hover:bg-[#bf953f] hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(191,149,63,0.15)] cursor-pointer"
             >
               Let&apos;s Talk
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Hamburger & Quick CTA */}
           <div className="flex md:hidden items-center gap-2">
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               className="px-3.5 py-1.5 border border-[#bf953f]/40 bg-[#bf953f]/10 rounded-full text-white text-[11px] font-bold tracking-wider uppercase"
             >
               Talk
-            </a>
+            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-xl text-white bg-white/5 border border-white/10 hover:bg-white/10 active:scale-95 transition-all"
+              className="p-2 rounded-xl text-white bg-white/5 border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer"
               aria-label="Toggle Navigation"
             >
               {isOpen ? <X size={20} className="text-[#bf953f]" /> : <Menu size={20} />}
@@ -130,21 +131,24 @@ export default function Navbar() {
             {/* Menu Links */}
             <div className="flex flex-col space-y-5">
               {navLinks.map((link, idx) => (
-                <motion.a
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 * idx }}
-                  className="flex items-center justify-between py-3 border-b border-white/5 text-2xl font-bold tracking-tight text-gray-200 active:text-white"
                 >
-                  <span className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-[#bf953f]">{link.num}</span>
-                    <span>{link.name}</span>
-                  </span>
-                  <ArrowUpRight size={18} className="text-gray-500" />
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-between py-3 border-b border-white/5 text-2xl font-bold tracking-tight text-gray-200 active:text-white"
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="text-xs font-mono text-[#bf953f]">{link.num}</span>
+                      <span>{link.name}</span>
+                    </span>
+                    <ArrowUpRight size={18} className="text-gray-500" />
+                  </Link>
+                </motion.div>
               ))}
             </div>
 
@@ -153,14 +157,14 @@ export default function Navbar() {
               <p className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold mb-2">
                 Direct Connection
               </p>
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 onClick={() => setIsOpen(false)}
                 className="w-full py-3.5 bg-gradient-to-r from-[#bf953f] to-[#aa771c] text-black font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2 shadow-lg"
               >
                 <MessageSquare size={16} />
                 Start a Conversation
-              </a>
+              </Link>
               <div className="flex gap-2">
                 <a
                   href="mailto:contact@pathmadewa.com"

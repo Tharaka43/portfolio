@@ -1,0 +1,11 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0A0A0A"/>
+  <rect x="2" y="2" width="1196" height="671" stroke="#BF953F" stroke-opacity="0.3" stroke-width="4" rx="16"/>
+  <circle cx="600" cy="270" r="70" fill="#141414" stroke="#BF953F" stroke-opacity="0.5" stroke-width="2"/>
+  <!-- Chef / POS Restaurant Icon -->
+  <path d="M575 295 C575 285 585 275 600 275 C615 275 625 285 625 295 Z M570 270 C560 250 580 230 600 230 C620 230 640 250 630 270 Z" fill="#D3AF71"/>
+  <text x="600" y="390" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="32" font-weight="bold" letter-spacing="2">RESTO RESTAURANT MANAGEMENT</text>
+  <text x="600" y="430" text-anchor="middle" fill="#D3AF71" font-family="system-ui, sans-serif" font-size="16" font-weight="600" letter-spacing="3">ZERO-LATENCY KDS &amp; TOUCH POS ARCHITECTURE</text>
+  <rect x="420" y="465" width="360" height="38" rx="19" fill="#181818" stroke="#FFFFFF" stroke-opacity="0.1"/>
+  <text x="600" y="489" text-anchor="middle" fill="#888888" font-family="system-ui, sans-serif" font-size="12" letter-spacing="1">LIVE ENTERPRISE DEPLOYMENT // SCREENSHOTS VIA NDA DEMO</text>
+</svg>

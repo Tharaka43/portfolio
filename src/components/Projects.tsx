@@ -1,154 +1,223 @@
 "use client";
-import { motion } from "framer-motion";
-import { Layers, ShieldAlert, Cpu, ArrowUpRight, CheckCircle2 } from "lucide-react";
-
-const projects = [
-  {
-    title: "NEXO POS SYSTEM",
-    subtitle: "OFFLINE-FIRST RETAIL SOLUTION",
-    role: "Lead Developer & Creator",
-    target: "Supermarkets, Pharmacies, Hardware Stores & Boutiques",
-    description: "A dual-component architecture featuring an Offline-First Desktop App (Flutter/Isar) and a Real-Time Cloud Dashboard (Next.js/Firebase). Engineered for uninterrupted retail operation.",
-    features: [
-      "Rapid barcode billing & GRN inventory with low-stock alerts",
-      "Hardware-Locked DRM Security (tied to Motherboard Serial)",
-      "Real-time cloud sync for live net profit & remote analytics",
-      "Comprehensive customer credit & daily expenses tracking"
-    ],
-    stack: ["Flutter", "Isar DB", "Next.js", "Firebase", "Desktop DRM"],
-    metrics: [
-      { label: "Architecture", value: "Offline-First Dual Mode" },
-      { label: "Security", value: "Motherboard DRM Locked" },
-      { label: "Sync Engine", value: "Real-time Firebase Cloud" }
-    ]
-  },
-  {
-    title: "RESTO",
-    subtitle: "RESTAURANT MANAGEMENT SYSTEM",
-    role: "Lead Developer & Creator",
-    target: "Fine Dining, Cafes & Food Chains",
-    description: "A comprehensive end-to-end management solution tailored specifically for the food service industry, seamlessly bridging the gap between front-of-house hospitality and kitchen operations.",
-    features: [
-      "Intuitive POS billing & dynamic table reservation management",
-      "Real-time Kitchen Display System (KDS) for chef order queues",
-      "Precise ingredient-level stock control & daily wastage logging",
-      "Role-based PIN login for Cashiers, Waiters, and Chefs"
-    ],
-    stack: ["React", "Node.js", "MySQL", "Tailwind CSS", "KDS Engine"],
-    metrics: [
-      { label: "Platforms", value: "Web & POS Tablet Optimized" },
-      { label: "Order Flow", value: "Zero-Latency KDS Sync" },
-      { label: "Access Control", value: "Multi-Role PIN Security" }
-    ]
-  }
-];
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { products } from "@/data/products";
+import { ArrowUpRight, Cpu, CheckCircle2, ExternalLink, Layers, Sparkles } from "lucide-react";
 
 export default function Projects() {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories = ["All", "Enterprise Software", "EdTech & AI Platforms"];
+
+  const filteredProducts =
+    selectedCategory === "All"
+      ? products
+      : products.filter((p) => p.category === selectedCategory);
+
   return (
-    <section id="projects" className="py-20 md:py-28 bg-[#050505] px-5 sm:px-8 md:px-12 lg:px-24">
+    <section id="products" className="py-20 md:py-28 bg-[#050505] px-5 sm:px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-xs font-mono font-bold text-[#bf953f] tracking-widest uppercase">02 // Selected Works</span>
-          <div className="h-[1px] w-12 bg-[#bf953f]/30" />
+        
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xs font-mono font-bold text-[#bf953f] tracking-widest uppercase">
+                02 // Product Portfolio
+              </span>
+              <div className="h-[1px] w-12 bg-[#bf953f]/30" />
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
+              PROPRIETARY PRODUCTS.<br />
+              <span className="text-gradient-gold">ENGINEERED VALUE.</span>
+            </h2>
+          </div>
+
+          {/* Filter Pills */}
+          <div className="flex flex-wrap gap-2 p-1.5 rounded-xl bg-white/[0.03] border border-white/5 w-fit">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 rounded-lg text-xs font-mono tracking-wider uppercase transition-all cursor-pointer ${
+                  selectedCategory === cat
+                    ? "bg-[#bf953f] text-black font-bold shadow-md"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 sm:mb-16 uppercase tracking-tight">
-          PROPRIETARY PRODUCTS.<br/>
-          <span className="text-gradient-gold">ENGINEERED VALUE.</span>
-        </h3>
+        {/* Product Cards Grid */}
+        <div className="space-y-12 sm:space-y-16">
+          <AnimatePresence mode="popLayout">
+            {filteredProducts.map((project, idx) => {
+              const primaryScreenshot = project.screenshots[0];
 
-        <div className="space-y-10 sm:space-y-16">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: idx * 0.15 }}
-              viewport={{ once: true, margin: "-60px" }}
-              className="border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 bg-[#090909] relative overflow-hidden group hover:border-[#bf953f]/30 transition-all duration-500 shadow-2xl"
-            >
-              {/* Subtle card glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/5 rounded-full blur-[80px] pointer-events-none group-hover:bg-[#bf953f]/10 transition-all duration-700" />
+              return (
+                <motion.article
+                  key={project.slug}
+                  layout
+                  initial={{ opacity: 0, y: 25 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 bg-[#090909] relative overflow-hidden group hover:border-[#bf953f]/40 transition-all duration-500 shadow-2xl"
+                >
+                  {/* Card background ambient glow */}
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-[#bf953f]/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-[#bf953f]/10 transition-all duration-700" />
 
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-14">
-                
-                {/* Left project details */}
-                <div className="flex-1">
-                  
-                  {/* Category Tag & Index */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 rounded-full bg-[#bf953f]/10 border border-[#bf953f]/20 text-gradient-gold text-[10px] sm:text-xs font-bold tracking-widest uppercase">
-                      {`0${idx + 1} // ${project.subtitle}`}
-                    </span>
-                    <span className="text-[10px] sm:text-xs text-gray-500 font-mono uppercase">{project.role}</span>
-                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    {/* Left: Product Information */}
+                    <div className="lg:col-span-7 flex flex-col justify-between h-full">
+                      <div>
+                        {/* Meta Category & Status Badges */}
+                        <div className="flex flex-wrap items-center gap-2 mb-4">
+                          <span className="px-3 py-1 rounded-full bg-[#bf953f]/10 border border-[#bf953f]/25 text-gradient-gold text-[10px] sm:text-xs font-bold tracking-widest uppercase">
+                            {project.category}
+                          </span>
+                          <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[10px] sm:text-xs font-mono font-medium tracking-wider flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            {project.status}
+                          </span>
+                        </div>
 
-                  <h4 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2 uppercase tracking-tight">
-                    {project.title}
-                  </h4>
-                  
-                  <p className="text-[11px] sm:text-xs text-gray-400 uppercase font-mono tracking-wider mb-4">
-                    Market: <span className="text-gray-300">{project.target}</span>
-                  </p>
+                        {/* Title and Tagline */}
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2 uppercase tracking-tight group-hover:text-gray-100 transition-colors">
+                          <Link href={`/products/${project.slug}`} className="hover:text-gradient-gold transition-colors">
+                            {project.name}
+                          </Link>
+                        </h3>
 
-                  <p className="text-gray-300 leading-relaxed text-xs sm:text-sm md:text-base mb-6 font-light">
-                    {project.description}
-                  </p>
-                  
-                  {/* Features list */}
-                  <div className="mb-6 space-y-2.5">
-                    <p className="text-[10px] font-mono tracking-widest uppercase text-gray-400 font-semibold">Core Architecture Highlights</p>
-                    {project.features.map((feature, i) => (
-                      <div key={i} className="text-gray-300 text-xs sm:text-sm flex items-start gap-2.5">
-                        <CheckCircle2 size={15} className="text-[#bf953f] shrink-0 mt-0.5" />
-                        <span>{feature}</span>
+                        <p className="text-xs sm:text-sm font-mono text-[#bf953f]/90 mb-4 tracking-wide">
+                          {project.tagline}
+                        </p>
+
+                        <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed mb-6 font-light">
+                          {project.shortDescription}
+                        </p>
+
+                        {/* Top Features */}
+                        <div className="space-y-2 mb-6">
+                          {project.features.slice(0, 3).map((feat, i) => (
+                            <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300">
+                              <CheckCircle2 size={15} className="text-[#bf953f] shrink-0 mt-0.5" />
+                              <span className="font-light">{feat}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Tech Stack Chips */}
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-8">
+                          {project.stack.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-3 py-1 text-[10px] sm:text-xs font-medium rounded-lg bg-white/[0.04] text-gray-300 border border-white/5"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    ))}
-                  </div>
 
-                  {/* Tech stack chips */}
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {project.stack.map(tech => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/10 rounded-lg text-gray-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                      {/* Action CTA Buttons */}
+                      <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                        <Link
+                          href={`/products/${project.slug}`}
+                          className="px-6 py-3.5 bg-gradient-to-r from-[#bf953f] to-[#aa771c] text-black text-xs font-bold tracking-widest uppercase rounded-xl hover:opacity-90 active:scale-[0.98] transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(191,149,63,0.2)]"
+                        >
+                          <span>System Specs &amp; Gallery</span>
+                          <ArrowUpRight size={15} />
+                        </Link>
 
-                {/* Right Architecture Metrics (Mobile Optimized) */}
-                <div className="lg:w-[340px] flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-10 space-y-4">
-                  <div className="flex items-center gap-2">
-                    <Cpu size={16} className="text-[#bf953f]" />
-                    <p className="text-[11px] text-gray-400 uppercase tracking-widest font-mono font-semibold">
-                      System Metrics
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    {project.metrics.map(metric => (
-                      <div key={metric.label} className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-1">
-                        <span className="text-gray-500 text-[10px] uppercase tracking-widest font-mono">{metric.label}</span>
-                        <span className="text-white text-xs sm:text-sm font-semibold">{metric.value}</span>
+                        {project.liveUrl ? (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-5 py-3.5 border border-white/20 bg-white/5 hover:bg-white hover:text-black text-white text-xs font-bold tracking-widest uppercase rounded-xl transition-all flex items-center gap-2"
+                          >
+                            <span>Live Platform</span>
+                            <ExternalLink size={14} />
+                          </a>
+                        ) : (
+                          <a
+                            href="#contact"
+                            className="px-5 py-3.5 border border-white/10 bg-white/[0.02] hover:border-[#bf953f]/40 text-gray-300 hover:text-white text-xs font-mono tracking-wider uppercase rounded-xl transition-all flex items-center gap-2"
+                          >
+                            <span>Request Demo</span>
+                            <ArrowUpRight size={14} />
+                          </a>
+                        )}
                       </div>
-                    ))}
-                  </div>
-
-                  <div className="pt-2">
-                    <div className="inline-flex items-center gap-2 text-xs text-[#bf953f] font-semibold tracking-wider uppercase">
-                      <span>Enterprise Ready Architecture</span>
-                      <ArrowUpRight size={14} />
                     </div>
-                  </div>
-                </div>
 
-              </div>
-            </motion.div>
-          ))}
+                    {/* Right: Authentic Screenshot Card */}
+                    <div className="lg:col-span-5">
+                      <Link href={`/products/${project.slug}`} className="block group/img">
+                        <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 group-hover/img:border-[#bf953f]/50 transition-all duration-500 shadow-2xl bg-black">
+                          {primaryScreenshot ? (
+                            <Image
+                              src={primaryScreenshot.src}
+                              alt={primaryScreenshot.alt}
+                              fill
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                              className="object-cover group-hover/img:scale-105 transition-transform duration-700"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#111]">
+                              <Layers size={36} className="text-[#bf953f] mb-2" />
+                              <p className="text-white text-sm font-bold uppercase">{project.name}</p>
+                              <p className="text-gray-500 text-xs font-mono mt-1">Live Enterprise Deployment</p>
+                            </div>
+                          )}
+
+                          {/* Overlay indicator */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover/img:opacity-40 transition-opacity" />
+
+                          <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-gray-300 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
+                            <span className="truncate">{primaryScreenshot?.caption || "View System Architecture"}</span>
+                            <span className="text-[#bf953f] shrink-0 ml-2">Inspect ↗</span>
+                          </div>
+                        </div>
+                      </Link>
+
+                      {/* Thumbnail Gallery Preview if multiple screenshots */}
+                      {project.screenshots.length > 1 && (
+                        <div className="grid grid-cols-3 gap-2 mt-3">
+                          {project.screenshots.map((shot, sIdx) => (
+                            <Link
+                              key={sIdx}
+                              href={`/products/${project.slug}`}
+                              className="relative aspect-video rounded-lg overflow-hidden border border-white/10 hover:border-[#bf953f]/60 transition-all group/sub"
+                            >
+                              <Image
+                                src={shot.src}
+                                alt={shot.alt}
+                                fill
+                                sizes="150px"
+                                className="object-cover group-hover/sub:scale-110 transition-transform duration-500"
+                              />
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                  </div>
+                </motion.article>
+              );
+            })}
+          </AnimatePresence>
         </div>
+
       </div>
     </section>
   );
