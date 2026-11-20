@@ -1,6 +1,6 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles, Cpu, ShieldCheck, Zap } from "lucide-react";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -10,16 +10,16 @@ export default function Hero() {
     : { duration: 0.8, ease: "easeOut" as const };
 
   return (
-    <section className="relative min-h-[100dvh] flex items-start lg:items-center pt-28 sm:pt-32 lg:pt-28 pb-12 sm:pb-16 bg-[#050505] overflow-hidden px-5 sm:px-8 md:px-12 lg:px-24">
+    <section className="relative min-h-[100dvh] flex items-center pt-24 sm:pt-32 pb-12 sm:pb-16 bg-[#050505] overflow-hidden px-5 sm:px-8 md:px-12 lg:px-24">
       {/* Ambient background glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] bg-[#bf953f]/10 rounded-full blur-[140px] pointer-events-none z-0" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[340px] sm:w-[600px] h-[340px] sm:h-[600px] bg-[#bf953f]/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      {/* Center Video (Z-0) - Translucent Luxury Watermark Framing (විනිවිද පෙනෙන සේ මුළු මුහුණම පසුබිමෙන් පෙනෙන සේ සැකසීම) */}
+      {/* Center Video (Z-0) - Translucent Luxury Watermark Extending Down Screen */}
       <motion.div
         initial={shouldReduceMotion ? false : { scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: shouldReduceMotion ? 0 : 1.2 }}
-        className="absolute top-[48%] sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] w-[130vw] sm:w-[100vw] md:w-[80vw] h-[85vh] sm:h-[95vh] md:h-[120vh] z-0 pointer-events-none flex justify-center items-center"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] w-[130vw] sm:w-[100vw] md:w-[80vw] h-[90vh] sm:h-[100vh] md:h-[120vh] z-0 pointer-events-none flex justify-center items-center"
       >
         <video
           src="/gemini_generated_video_0ba9487d.mp4"
@@ -27,19 +27,19 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-contain opacity-25 sm:opacity-45 md:opacity-85 transition-opacity duration-700"
+          className="w-full h-full object-contain opacity-25 sm:opacity-40 md:opacity-85 transition-opacity duration-700"
           style={{
-            /* Smooth radial mask to feather out all edges and the bottom 'N' icon seamlessly into pure black */
-            maskImage: "radial-gradient(ellipse 42% 46% at 50% 45%, black 20%, rgba(0,0,0,0.5) 45%, transparent 70%)",
-            WebkitMaskImage: "radial-gradient(ellipse 42% 46% at 50% 45%, black 20%, rgba(0,0,0,0.5) 45%, transparent 70%)",
+            maskImage: "radial-gradient(ellipse 46% 54% at 50% 48%, black 25%, rgba(0,0,0,0.5) 60%, transparent 85%)",
+            WebkitMaskImage: "radial-gradient(ellipse 46% 54% at 50% 48%, black 25%, rgba(0,0,0,0.5) 60%, transparent 85%)",
           }}
         />
       </motion.div>
 
       {/* Content Container (Z-10 in front) */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between h-full mt-1 sm:mt-4 lg:mt-0">
-        {/* Left Column (Text & Buttons) */}
-        <div className="flex-1 w-full lg:w-[58%]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between h-full py-4 sm:py-6">
+        {/* Left Column (Text, Buttons & Metrics) */}
+        <div className="flex-1 w-full lg:w-[60%]">
+          
           {/* Status Badge */}
           <motion.div
             initial={shouldReduceMotion ? false : { y: -20, opacity: 0 }}
@@ -53,6 +53,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
+          {/* Heading */}
           <motion.h1
             initial={shouldReduceMotion ? false : { x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -64,11 +65,12 @@ export default function Hero() {
             <span className="block text-gradient-gold drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">SYSTEMS.</span>
           </motion.h1>
 
+          {/* Identity Subtitle */}
           <motion.div
             initial={shouldReduceMotion ? false : { x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, ...transitionConfig }}
-            className="mt-4 sm:mt-6 flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-gray-300 uppercase tracking-widest font-semibold drop-shadow-md"
+            className="mt-4 sm:mt-5 flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-gray-300 uppercase tracking-widest font-semibold drop-shadow-md"
           >
             <span className="text-white">Full Stack Software Engineer</span>
             <span className="text-[#bf953f]">•</span>
@@ -77,11 +79,12 @@ export default function Hero() {
             <span className="text-gray-400">Co-founder @ 404Lab</span>
           </motion.div>
 
+          {/* Clean Paragraph */}
           <motion.p
             initial={shouldReduceMotion ? false : { x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.6, ...transitionConfig }}
-            className="mt-4 sm:mt-6 text-gray-200 max-w-lg text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)] font-light"
+            className="mt-4 sm:mt-5 text-gray-200 max-w-lg text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)] font-light"
           >
             Building digital products that solve real-world problems. Specialized in offline-first enterprise architectures, real-time cloud synchronizations, and AI-powered learning engines.
           </motion.p>
@@ -91,7 +94,7 @@ export default function Hero() {
             initial={shouldReduceMotion ? false : { x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.7, ...transitionConfig }}
-            className="mt-6 sm:mt-9 grid grid-cols-2 sm:flex sm:flex-row gap-3 sm:gap-4 max-w-sm sm:max-w-none"
+            className="mt-5 sm:mt-8 grid grid-cols-2 sm:flex sm:flex-row gap-3 sm:gap-4 max-w-sm sm:max-w-none"
           >
             <a
               href="#products"
@@ -108,6 +111,45 @@ export default function Hero() {
               <ArrowUpRight size={14} className="shrink-0" />
             </a>
           </motion.div>
+
+          {/* High-Impact Proof Matrix: Fills lower viewport seamlessly */}
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.85, ...transitionConfig }}
+            className="mt-7 sm:mt-10 pt-5 sm:pt-6 border-t border-white/10 grid grid-cols-3 gap-2.5 sm:gap-4 max-w-lg"
+          >
+            <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5 backdrop-blur-sm">
+              <div className="flex items-center gap-1 text-[#bf953f] mb-1">
+                <Cpu size={13} />
+                <span className="text-base sm:text-xl font-extrabold text-gradient-gold">6+</span>
+              </div>
+              <p className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-gray-400">
+                Flagship Systems
+              </p>
+            </div>
+
+            <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5 backdrop-blur-sm">
+              <div className="flex items-center gap-1 text-emerald-400 mb-1">
+                <Zap size={13} />
+                <span className="text-base sm:text-xl font-extrabold text-white">Dual</span>
+              </div>
+              <p className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-gray-400">
+                Offline + Cloud
+              </p>
+            </div>
+
+            <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5 backdrop-blur-sm">
+              <div className="flex items-center gap-1 text-[#bf953f] mb-1">
+                <ShieldCheck size={13} />
+                <span className="text-base sm:text-xl font-extrabold text-white">404Lab</span>
+              </div>
+              <p className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-gray-400">
+                Co-Founder
+              </p>
+            </div>
+          </motion.div>
+
         </div>
 
         {/* Right Column (Quote & Signature) - Hidden on Mobile */}
