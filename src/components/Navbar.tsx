@@ -167,7 +167,7 @@ export default function Navbar() {
               </Link>
               <div className="flex gap-2">
                 <a
-                  href="mailto:contact@pathmadewa.com"
+                  href="mailto:contact@pathmadewa.dev"
                   className="flex-1 py-3 bg-white/5 border border-white/10 text-white font-medium text-xs rounded-xl flex items-center justify-center gap-2"
                 >
                   <Mail size={14} className="text-[#bf953f]" />

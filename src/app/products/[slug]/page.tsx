@@ -229,6 +229,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                       src={shot.src}
                       alt={shot.alt}
                       fill
+                      loading="eager"
                       sizes="(max-width: 1200px) 100vw, 1200px"
                       className="object-contain"
                     />
@@ -238,9 +239,15 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                       <span className="text-[#bf953f] font-bold mr-2">#{idx + 1}</span>
                       {shot.caption}
                     </p>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-gray-500 bg-white/5 px-2.5 py-1 rounded">
-                      Verified UI Asset
-                    </span>
+                    {shot.isConceptual ? (
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#bf953f] bg-[#bf953f]/10 border border-[#bf953f]/25 px-2.5 py-1 rounded">
+                        Architecture Schematic // Live UI via Client Demo
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-1 rounded">
+                        Authentic Application UI
+                      </span>
+                    )}
                   </figcaption>
                 </figure>
               ))}

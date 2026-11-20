@@ -78,7 +78,7 @@ export default function Hero() {
               <span className="text-[#bf953f]">•</span>
               <span className="text-white">Product Creator</span>
               <span className="text-[#bf953f]">•</span>
-              <span className="text-gray-400">Co-founder @ 404Lab</span>
+              <span className="text-gray-400">Lead Architect @ Pathmadewa Solution</span>
             </motion.div>
 
             {/* Clean Paragraph */}
@@ -176,10 +176,10 @@ export default function Hero() {
             <div className="p-3 rounded-xl bg-[#0b0b0b]/90 border border-white/10 backdrop-blur-md shadow-lg">
               <div className="flex items-center gap-1.5 text-[#bf953f] mb-1">
                 <ShieldCheck size={13} />
-                <span className="text-base sm:text-xl font-extrabold text-white">404Lab</span>
+                <span className="text-base sm:text-xl font-extrabold text-white">Full Stack</span>
               </div>
               <p className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-gray-400">
-                Co-Founder
+                Lead Architect
               </p>
             </div>
           </motion.div>

@@ -8,7 +8,7 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
   const [sentNotice, setSentNotice] = useState(false);
 
-  const emailAddress = "contact@pathmadewa.com";
+  const emailAddress = "contact@pathmadewa.dev";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
@@ -68,20 +68,22 @@ export default function Contact() {
 
             {/* Quick Touch Contact Cards */}
             <div className="space-y-3 pt-2">
-              {/* WhatsApp Card */}
+              {/* Verified Professional Network Card */}
               <a
-                href="https://wa.me/94700000000"
+                href="https://www.linkedin.com/in/tharaka-kumara-1a171b260/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-[#bf953f]/40 active:scale-[0.99] transition-all group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
-                    <MessageCircle size={18} />
+                  <div className="p-2.5 rounded-lg bg-[#0077b5]/15 text-[#0077b5]">
+                    <svg className="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
                   </div>
                   <div>
-                    <p className="text-[10px] text-gray-500 uppercase font-mono tracking-wider">Fast Response</p>
-                    <p className="text-xs sm:text-sm font-semibold text-white">Direct via WhatsApp</p>
+                    <p className="text-[10px] text-gray-500 uppercase font-mono tracking-wider">Professional Profile</p>
+                    <p className="text-xs sm:text-sm font-semibold text-white">Connect on LinkedIn</p>
                   </div>
                 </div>
                 <span className="text-xs text-gray-400 group-hover:text-white transition-colors">↗</span>
@@ -227,10 +229,10 @@ export default function Contact() {
           </div>
 
           {/* Social Links & Back to Top */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             {/* GitHub */}
             <a
-              href="https://github.com/tharakakumara"
+              href="https://github.com/Tharaka43"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-[#bf953f]/40 transition-all"
@@ -243,7 +245,7 @@ export default function Contact() {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/tharaka-kumara-1a171b260/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-[#bf953f]/40 transition-all"
@@ -251,6 +253,19 @@ export default function Contact() {
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/profile.php?id=100084303407024"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-[#bf953f]/40 transition-all"
+              aria-label="Facebook Profile"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
 

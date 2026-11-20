@@ -168,6 +168,7 @@ export default function Projects() {
                               src={primaryScreenshot.src}
                               alt={primaryScreenshot.alt}
                               fill
+                              loading="eager"
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                               className="object-cover group-hover/img:scale-105 transition-transform duration-700"
                             />
@@ -191,18 +192,19 @@ export default function Projects() {
 
                       {/* Thumbnail Gallery Preview if multiple screenshots */}
                       {project.screenshots.length > 1 && (
-                        <div className="grid grid-cols-3 gap-2 mt-3">
+                        <div className="flex flex-wrap gap-2 mt-3">
                           {project.screenshots.map((shot, sIdx) => (
                             <Link
                               key={sIdx}
                               href={`/products/${project.slug}`}
-                              className="relative aspect-video rounded-lg overflow-hidden border border-white/10 hover:border-[#bf953f]/60 transition-all group/sub"
+                              className="relative aspect-video w-24 sm:w-28 rounded-lg overflow-hidden border border-white/10 hover:border-[#bf953f]/60 transition-all group/sub shrink-0"
                             >
                               <Image
                                 src={shot.src}
                                 alt={shot.alt}
                                 fill
-                                sizes="150px"
+                                loading="eager"
+                                sizes="120px"
                                 className="object-cover group-hover/sub:scale-110 transition-transform duration-500"
                               />
                             </Link>

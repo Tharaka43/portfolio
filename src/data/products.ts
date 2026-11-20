@@ -2,6 +2,7 @@ export interface ProductScreenshot {
   src: string;
   alt: string;
   caption: string;
+  isConceptual?: boolean;
 }
 
 export interface ProductMetric {
@@ -63,17 +64,12 @@ export const products: Product[] = [
       {
         src: "/projects/nexo-pos/login-screen.jpg",
         alt: "NEXO POS Secure Authentication and Workstation Terminal",
-        caption: "Workstation terminal sign-in with hardware licensing validation and dual role access"
+        caption: "Authentic desktop workstation terminal sign-in with motherboard-locked licensing DRM and role authorization"
       },
       {
         src: "/projects/nexo-pos/desktop-dashboard.jpg",
         alt: "NEXO POS Desktop Billing and Financial Summary Interface",
-        caption: "Desktop POS operating terminal featuring today's sales, cash in drawer, credit tracking, and inventory"
-      },
-      {
-        src: "/projects/nexo-pos/cloud-analytics.jpg",
-        alt: "NEXO POS Web Cloud Executive Analytics Dashboard",
-        caption: "Real-time cloud analytics dashboard: multi-channel sales trends, order volumes, and inventory valuation"
+        caption: "Desktop POS operating terminal featuring daily revenue tracking, cash drawer balance, customer credit, and low-stock alerts"
       }
     ],
     demoAvailable: true,
@@ -82,7 +78,7 @@ export const products: Product[] = [
   {
     slug: "resto-management",
     name: "Resto Restaurant Management",
-    tagline: "End-to-End Hospitality POS & Zero-Latency Kitchen Display System",
+    tagline: "End-to-End Hospitality POS & Real-Time Kitchen Display System",
     category: "Enterprise Software",
     role: "Lead Developer & System Architect",
     status: "Active Enterprise Deployment",
@@ -92,7 +88,7 @@ export const products: Product[] = [
     problemSolved:
       "Restaurant operations suffer from paper ticket loss, waiter-to-kitchen miscommunication, and untracked ingredient waste. Resto synchronizes front-of-house waitstaff with chefs in real-time, enforcing shift transparency and ingredient-level batch deduction on every meal prepped.",
     architectureOverview:
-      "Built with a responsive React/Node.js architecture tailored for both desktop touchscreens and tablet form factors. Real-time event propagation guarantees zero-latency order dispatch to Kitchen Display screens while enforcing multi-role PIN barriers.",
+      "Built with a responsive React/Node.js architecture tailored for both desktop touchscreens and tablet form factors. Real-time event propagation guarantees sub-second order dispatch to Kitchen Display screens while enforcing multi-role PIN barriers.",
     features: [
       "Intuitive Touch Point of Sale (POS) optimized for dine-in tables, takeaway, and delivery orders",
       "Real-Time Kitchen Display System (KDS) displaying order queue status with chef fulfillment markers",
@@ -111,8 +107,9 @@ export const products: Product[] = [
     screenshots: [
       {
         src: "/projects/resto/kds-preview.svg",
-        alt: "Resto Restaurant Management System Architecture Preview",
-        caption: "Resto Enterprise POS & Kitchen Display System (Live deployment screenshots available upon authorized NDA request)"
+        alt: "Resto Restaurant Management System Architecture Schematic",
+        caption: "Resto POS & Kitchen Display System architecture overview (On-site terminal and KDS production walkthrough available via client demonstration)",
+        isConceptual: true
       }
     ],
     demoAvailable: true,

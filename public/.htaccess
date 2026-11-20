@@ -1,5 +1,6 @@
-# Next.js Static Export Configuration for Hostinger Apache/LiteSpeed
+DirectoryIndex index.html index.php
 
+# Next.js Static Export Configuration for Hostinger Apache/LiteSpeed
 RewriteEngine On
 
 # Force HTTPS

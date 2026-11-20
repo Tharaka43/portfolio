@@ -4,8 +4,8 @@ import { ShieldCheck, Cpu, Code2, Sparkles } from "lucide-react";
 
 export default function About() {
   const stats = [
-    { label: "Co-Founder", value: "404Lab", icon: Sparkles },
-    { label: "Flagship Systems", value: "2+", icon: Cpu },
+    { label: "Primary Role", value: "System Architect", icon: Sparkles },
+    { label: "Flagship Systems", value: "6+", icon: Cpu },
     { label: "Engineering", value: "Full Stack", icon: Code2 },
     { label: "Architecture", value: "Offline & Cloud", icon: ShieldCheck },
   ];
@@ -41,7 +41,7 @@ export default function About() {
           </p>
 
           <p className="text-gray-400 leading-relaxed mt-4 text-sm md:text-base max-w-2xl font-light">
-            As the Co-founder of 404Lab and Lead Developer of Pathmadewa Solution, I architect and develop systems that streamline complex business operations, ensuring high performance, security, and seamless user experiences.
+            As the Lead Developer and System Architect of Pathmadewa Solution, I architect and develop systems that streamline complex business operations, ensuring high performance, security, and seamless user experiences.
           </p>
 
           {/* Next Level Mobile Stat Grid */}
@@ -87,7 +87,7 @@ export default function About() {
              <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/80 backdrop-blur-md rounded-lg border border-white/10 flex items-center justify-between">
                 <div>
                    <p className="text-[10px] uppercase font-mono tracking-widest text-[#bf953f]">Role</p>
-                   <p className="text-xs font-bold text-white uppercase">Co-Founder & System Architect</p>
+                   <p className="text-xs font-bold text-white uppercase">Lead System Architect</p>
                 </div>
                 <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
              </div>

@@ -110,7 +110,7 @@ export default function Experience() {
                   2022 - Present
                 </span>
                 <h5 className="text-base sm:text-lg font-bold text-white mt-1">
-                  Co-Founder & Software Engineer
+                  Lead Software Architect &amp; Product Creator
                 </h5>
                 <p className="text-xs text-gray-400 font-mono">Pathmadewa Solution</p>
                 <p className="text-gray-400 text-xs sm:text-sm mt-2.5 leading-relaxed font-light">
