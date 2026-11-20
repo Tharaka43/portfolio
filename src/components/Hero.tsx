@@ -14,12 +14,12 @@ export default function Hero() {
       {/* Ambient background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] bg-[#bf953f]/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      {/* Center Video (Z-0) - Positioned gracefully below text on mobile */}
+      {/* Center Video (Z-0) - Translucent Luxury Watermark Framing (විනිවිද පෙනෙන සේ මුළු මුහුණම පසුබිමෙන් පෙනෙන සේ සැකසීම) */}
       <motion.div
-        initial={shouldReduceMotion ? false : { scale: 0.88, opacity: 0 }}
+        initial={shouldReduceMotion ? false : { scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: shouldReduceMotion ? 0 : 1.2 }}
-        className="absolute -bottom-8 sm:bottom-0 md:top-1/2 left-1/2 -translate-x-1/2 md:-translate-y-[45%] w-[140vw] sm:w-[110vw] md:w-[80vw] h-[52vh] sm:h-[65vh] md:h-[120vh] z-0 pointer-events-none flex justify-center items-end md:items-center"
+        className="absolute top-[48%] sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] w-[130vw] sm:w-[100vw] md:w-[80vw] h-[85vh] sm:h-[95vh] md:h-[120vh] z-0 pointer-events-none flex justify-center items-center"
       >
         <video
           src="/gemini_generated_video_0ba9487d.mp4"
@@ -27,10 +27,11 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover md:object-contain opacity-45 sm:opacity-65 md:opacity-85"
+          className="w-full h-full object-contain opacity-25 sm:opacity-45 md:opacity-85 transition-opacity duration-700"
           style={{
-            maskImage: "radial-gradient(ellipse 48% 52% at 50% 50%, black 35%, transparent 75%)",
-            WebkitMaskImage: "radial-gradient(ellipse 48% 52% at 50% 50%, black 35%, transparent 75%)",
+            /* Smooth radial mask to feather out all edges and the bottom 'N' icon seamlessly into pure black */
+            maskImage: "radial-gradient(ellipse 42% 46% at 50% 45%, black 20%, rgba(0,0,0,0.5) 45%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(ellipse 42% 46% at 50% 45%, black 20%, rgba(0,0,0,0.5) 45%, transparent 70%)",
           }}
         />
       </motion.div>
@@ -39,7 +40,7 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between h-full mt-1 sm:mt-4 lg:mt-0">
         {/* Left Column (Text & Buttons) */}
         <div className="flex-1 w-full lg:w-[58%]">
-          {/* Status Badge (Replaced duplicate name with active availability status) */}
+          {/* Status Badge */}
           <motion.div
             initial={shouldReduceMotion ? false : { y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -58,16 +59,16 @@ export default function Hero() {
             transition={{ delay: 0.3, ...transitionConfig }}
             className="text-[clamp(2.2rem,7.5vw,6.2rem)] leading-[0.95] font-extrabold tracking-tighter"
           >
-            <span className="block text-white pb-1 sm:pb-1.5 drop-shadow-2xl">I ARCHITECT</span>
-            <span className="block text-gradient-gold pb-1 sm:pb-1.5 drop-shadow-2xl">SCALABLE</span>
-            <span className="block text-gradient-gold drop-shadow-2xl">SYSTEMS.</span>
+            <span className="block text-white pb-1 sm:pb-1.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">I ARCHITECT</span>
+            <span className="block text-gradient-gold pb-1 sm:pb-1.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">SCALABLE</span>
+            <span className="block text-gradient-gold drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">SYSTEMS.</span>
           </motion.h1>
 
           <motion.div
             initial={shouldReduceMotion ? false : { x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, ...transitionConfig }}
-            className="mt-4 sm:mt-6 flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-gray-300 uppercase tracking-widest font-semibold"
+            className="mt-4 sm:mt-6 flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-gray-300 uppercase tracking-widest font-semibold drop-shadow-md"
           >
             <span className="text-white">Full Stack Software Engineer</span>
             <span className="text-[#bf953f]">•</span>
@@ -76,17 +77,16 @@ export default function Hero() {
             <span className="text-gray-400">Co-founder @ 404Lab</span>
           </motion.div>
 
-          {/* Clean paragraph without awkward dark bounding box */}
           <motion.p
             initial={shouldReduceMotion ? false : { x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.6, ...transitionConfig }}
-            className="mt-4 sm:mt-6 text-gray-300 max-w-lg text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-light"
+            className="mt-4 sm:mt-6 text-gray-200 max-w-lg text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)] font-light"
           >
             Building digital products that solve real-world problems. Specialized in offline-first enterprise architectures, real-time cloud synchronizations, and AI-powered learning engines.
           </motion.p>
 
-          {/* Buttons: Side-by-side 2-column grid on mobile to keep vertical height minimal and free character face */}
+          {/* Action Buttons: 2-column grid on mobile */}
           <motion.div
             initial={shouldReduceMotion ? false : { x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
