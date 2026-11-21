@@ -37,6 +37,15 @@ export const metadata: Metadata = {
   authors: [{ name: "A H T K PATHMADEWA", url: "https://pathmadewa.dev" }],
   creator: "A H T K PATHMADEWA",
   publisher: "A H T K PATHMADEWA",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   alternates: {
     canonical: "https://pathmadewa.dev",
   },

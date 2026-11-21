@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="60" y1="60" x2="452" y2="452" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#BF953F"/>
+      <stop offset="35%" stop-color="#FCF6BA"/>
+      <stop offset="60%" stop-color="#B38728"/>
+      <stop offset="85%" stop-color="#FBF5B7"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+    </linearGradient>
+    <linearGradient id="borderGradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#BF953F" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FCF6BA" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#AA771C" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#BF953F" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Dark Luxury Circular Badge Background -->
+  <circle cx="256" cy="256" r="240" fill="#070707"/>
+  <circle cx="256" cy="256" r="236" stroke="url(#borderGradient)" stroke-width="14"/>
+
+  <!-- Centered Iconic Gold T Emblem -->
+  <path d="M 100 120 L 412 120 L 372 218 L 294 218 L 294 412 L 218 412 L 218 218 L 140 218 Z" 
+        fill="url(#goldGradient)" 
+        filter="url(#goldGlow)"/>
+</svg>
