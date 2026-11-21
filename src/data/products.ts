@@ -72,6 +72,7 @@ export const products: Product[] = [
         caption: "Desktop POS operating terminal featuring daily revenue tracking, cash drawer balance, customer credit, and low-stock alerts"
       }
     ],
+    liveUrl: "https://nexopos.pathmadewa.dev/",
     demoAvailable: true,
     featured: true
   },
@@ -161,6 +162,7 @@ export const products: Product[] = [
         caption: "Console station grid ready for instant one-click session activation"
       }
     ],
+    liveUrl: "https://nexoplay.pathmadewa.dev/",
     demoAvailable: true,
     featured: true
   },
@@ -206,7 +208,7 @@ export const products: Product[] = [
         caption: "1-Click learning modules: Hangul alphabet, official textbooks, 100 UBT papers, and color blindness assessment"
       }
     ],
-    liveUrl: "https://koreanguru.lk",
+    liveUrl: "https://koreanguru.colomboads.com/",
     demoAvailable: true,
     featured: true
   },
@@ -246,7 +248,7 @@ export const products: Product[] = [
         caption: "NihongoGuru dashboard highlighting study streaks, Kana Studio, Minna lessons, and vocabulary flashcards"
       }
     ],
-    liveUrl: "https://nihongoguru.lk",
+    liveUrl: "https://japan.colomboads.com/",
     demoAvailable: true,
     featured: true
   },
@@ -286,7 +288,7 @@ export const products: Product[] = [
         caption: "EnglishGuru main interface showing the live interactive speech studio, pronunciation evaluator, and learning tracks"
       }
     ],
-    liveUrl: "https://englishguru.lk",
+    liveUrl: "https://english.colomboads.com/",
     demoAvailable: true,
     featured: true
   }
